@@ -1,9 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import {ScrollView,Modal,View,StyleSheet,TouchableOpacity} from "react-native";
-import {Button,Text,Card,CardItem,Body,Container} from "native-base";
+import {Text,Card,CardItem,Body,Container} from "native-base";
 import * as SQLite from "expo-sqlite";
 
-function Busqueda({navigation}) {
+function Busqueda({route,navigation}) {
     const [empresa,setEmpresa]=useState("");
     const [listaEmpresas,setListaEmpresas]=useState([]);
     const [modalV,setModalV]=useState(false);
@@ -11,18 +11,35 @@ function Busqueda({navigation}) {
     const db=SQLite.openDatabase("empresas.db");
 
     useEffect((tx)=>{
+      if(route.params.selec=="Todo"){
         db.transaction((tx)=>{
+          tx.executeSql(
+              "select * from company",
+              [],
+              (txObj,{rows:{_array}})=>setListaEmpresas(_array)
+          )
+       })
+      }else if(route.params.selec=="Nombre" && route.params.ans!=null){
+          db.transaction((tx)=>{
             tx.executeSql(
-                "select * from company",
-                [],
-                (txObj,{rows:{_array}})=>setListaEmpresas(_array)
+              "select * from company where nombre = ?",
+              [route.params.ans],
+              (txObj,{rows:{_array}})=>setListaEmpresas(_array)
             )
-        })
-        
+          })
+      }else if(route.params.selec=="Clasificacion" && route.params.ans!=null){
+          db.transaction((tx)=>{
+            tx.executeSql(
+              "select * from company where clasificacion = ?",
+              [route.params.ans],
+              (txObj,{rows:{_array}})=>setListaEmpresas(_array)
+            )
+          })
+      }   
     })
 
-    const eliminarEmpresa = async () => {
-        await db.transaction((tx) => {
+    const eliminarEmpresa =  () => {
+        db.transaction((tx) => {
           tx.executeSql(
             "DELETE FROM company WHERE id = ? ",
             [empresaActual.id],

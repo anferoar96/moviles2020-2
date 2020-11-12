@@ -22,8 +22,8 @@ export default function Formulario({route,navigation}) {
         setInfo(copyInfo);
       };
 
-      const addInfoBD = async () => {
-        await db.transaction((tx) => {
+      const addInfoBD =  () => {
+         db.transaction((tx) => {
           tx.executeSql(
             "INSERT INTO company (nombre, url, telefono, email, productos, clasificacion) values (?, ?, ?, ?, ?, ?)",
             [
@@ -38,11 +38,12 @@ export default function Formulario({route,navigation}) {
             (txObj, error) => console.log("Error", error)
           );
         });
-        navigation.push("Buscar");
+        navigation.pop();
+        navigation.navigate("Empresas");
       };
     
-      const updateInfoBD = async () => {
-        await db.transaction((tx) => {
+      const updateInfoBD = () => {
+        db.transaction((tx) => {
           tx.executeSql(
             "UPDATE company SET nombre = ?, url = ?, telefono = ?, email = ?, productos = ?, clasificacion = ? WHERE id = ?",
             [
@@ -61,7 +62,8 @@ export default function Formulario({route,navigation}) {
             }
           );
         });
-        navigation.push("Buscar");
+        navigation.pop();
+        navigation.navigate("Buscar");
       };
 
     useEffect(()=>{
