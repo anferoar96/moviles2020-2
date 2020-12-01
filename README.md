@@ -24,11 +24,15 @@ Graficos y sonidos Tic-tac-toe en Java
 
 ## Reto 6
 
-Settings en Java
+Settings Tic-tac-toe en Java
+
+## Reto 7
+
+Multijugador Tic-tac-toe en Java
 
 ## Reto 8
 
-CRUD con SQLite y react native
+CRUD con SQLite y React Native
 
 ## Reto 9
 

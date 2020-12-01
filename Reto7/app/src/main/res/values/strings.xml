@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Reto7</string>
+
+    <string name="single_player">Single Player</string>
+    <string name="online">Online</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
+    <string name="back">Back</string>
+</resources>
