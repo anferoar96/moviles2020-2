@@ -54,13 +54,9 @@ public class OnlineGameActivity extends AppCompatActivity {
 
         if(requestType.equals("From")){
             myGameSign = "0";
-            tvPlayer1.setText("Your turn");
-            tvPlayer2.setText("Your turn");
             myRef.child("playing").child(playerSession).child("turn").setValue(userName);
         }else{
             myGameSign = "X";
-            tvPlayer1.setText(otherPlayer + "\'s turn");
-            tvPlayer2.setText(otherPlayer + "\'s turn");
             myRef.child("playing").child(playerSession).child("turn").setValue(otherPlayer);
         }
 

@@ -10,7 +10,6 @@
     android:orientation="vertical"
     android:layout_weight="1"
     android:padding="5dp"
-    android:background="@drawable/woods"
     tools:context=".MenuActivity">
 
     <mehdi.sakout.fancybuttons.FancyButton
@@ -54,25 +53,6 @@
     android:onClick="StartGameOnline"
     />
 
-    <mehdi.sakout.fancybuttons.FancyButton
-        android:id="@+id/btn_exit"
-        android:layout_width="@dimen/width_menu_button"
-        android:layout_height="wrap_content"
-        fancy:fb_textSize="@dimen/size_menu_button"
-        android:layout_marginTop="20dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp"
-        fancy:fb_borderColor="#FFFFFF"
-        fancy:fb_borderWidth="1dp"
-        fancy:fb_defaultColor="#b80009"
-        fancy:fb_focusColor="#d8232f"
-        fancy:fb_iconPosition="left"
-        fancy:fb_radius="30dp"
-        fancy:fb_text="@string/exit"
-        fancy:fb_textColor="#FFFFFF"
-        android:onClick="EndGame"
-        />
+
 
 </LinearLayout>

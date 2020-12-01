@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/woods"
     tools:context=".OnlineLoginActivity">
     
     <TextView
@@ -14,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:text="ID"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textAlignment="center"
         android:textSize="18sp"
         />
@@ -34,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Send Request to"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="12sp"
                 />
             <ListView
@@ -55,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Accept request from"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="12sp"
                 />
             <ListView

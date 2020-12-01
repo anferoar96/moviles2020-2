@@ -12,20 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Thread timer=new Thread(){
-            public void run (){
-                try{
-                    sleep(3000);
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }finally {
-                    Intent i=new Intent(getApplicationContext(),MenuActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-            }
+        Intent i=new Intent(getApplicationContext(),MenuActivity.class);
+        startActivity(i);
+        finish();
 
-        };
-        timer.start();
     }
 }

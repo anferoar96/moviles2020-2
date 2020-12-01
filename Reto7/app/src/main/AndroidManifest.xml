@@ -13,16 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OnlineGameActivity"></activity>
+        <activity
+            android:name=".OnlineGameActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/FullScreenTheme"
+            ></activity>
         <activity
             android:name=".OnlineLoginActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
             android:theme="@style/FullScreenTheme" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
             android:theme="@style/FullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,12 +35,10 @@
         <activity
             android:name=".MenuActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
             android:theme="@style/FullScreenTheme" />
         <activity
             android:name=".GameActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
             android:theme="@style/FullScreenTheme" />
     </application>
 

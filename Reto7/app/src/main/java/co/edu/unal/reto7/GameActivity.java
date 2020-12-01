@@ -167,9 +167,9 @@ public class GameActivity extends AppCompatActivity {
 
         if(winner!=0 && gameState==1){
             if(winner==1){
-                showAlert("You win the game");
+                showAlert("You win");
             }else if(winner==2){
-                showAlert("Player 2 is winner");
+                showAlert("You lost");
             }
             gameState=2;
         }

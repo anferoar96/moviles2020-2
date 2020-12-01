@@ -80,7 +80,7 @@ public class OnlineLoginActivity extends AppCompatActivity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView text = (TextView) view.findViewById(android.R.id.text1);
-                text.setTextColor(Color.WHITE);
+                text.setTextColor(Color.BLACK);
                 return view;
             }
         };
@@ -92,7 +92,7 @@ public class OnlineLoginActivity extends AppCompatActivity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView text = (TextView) view.findViewById(android.R.id.text1);
-                text.setTextColor(Color.WHITE);
+                text.setTextColor(Color.BLACK);
                 return view;
             }
         };
@@ -157,7 +157,7 @@ public class OnlineLoginActivity extends AppCompatActivity {
         final View dialogView=inflater.inflate(R.layout.connect_player_dialog,null);
         b.setView(dialogView);
         b.setTitle("Start Game?");
-        b.setMessage("Connect with"+OtherPlayer);
+        b.setMessage("Connect with "+OtherPlayer);
         b.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
